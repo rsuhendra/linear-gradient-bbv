@@ -1,3 +1,5 @@
 # linear-gradient-bbv
 
-Test
+Original equations are
+
+$X=5$
