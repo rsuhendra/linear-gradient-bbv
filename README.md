@@ -29,14 +29,14 @@ where $w_I, w_C$ are ipsilateral and contralateral weights, $v_0$ is a base spee
 
 ## goal direction approximation
 We assume $n$ EPG cells. Each cell corresponds to an angle $phi$ distributed evenly across $[0, 2\pi]$, forming a ring which encodes the current heading direction according to
-$${EPG}_\phi =  \cos(\phi-\theta)$$
+$${EPG}_\phi =  \cos(\theta-\phi)$$
 
 We also assume the direction of another set of $n$ ring cells, which encode the direction of a goal, a preferred heading. These integrate the product of the derivative-like signal $d$ and the EPG cells, and evolve according to 
 
 $$\frac{dG_\phi}{dt} = -kG_\phi - d\cdot {EPG}_\phi $$
 
 We then take the goal direction at time $t$ to be 
-$$\phi_{opt} = \argmax_{\phi} G_\phi$$
+$$\phi_{opt} = \arg\max_{\phi} G_\phi$$
 
 ## new movement
 We retain the equations of motions from (1), but modify the speeds of each vehicle wheel to be
@@ -58,8 +58,8 @@ Firstly, we assume that the gradient is linear, and varies in only one direction
 
 $$
 \begin{align}
-\frac{dG_\phi}{dt} &= -kG_\phi - d\cdot {EPG}_\phi \\
-&= kG_{phi}
+\frac{dG_\phi}{dt} &= -kG_\phi - d\cdot EPG_\phi \\
+&= -kG_\phi - \beta\cos(\theta-\phi_{opt}) \cdot \cos(\theta-\phi)
 \end{align}
 $$
 
