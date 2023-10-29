@@ -64,12 +64,12 @@ $$
 $$
 
 Looking at steady states and assuming we are travelling only in a direction $\theta_0$, we get
+
 $$
-\begin{align}
 G_\phi  = \frac{\beta}{k} \cos(\theta_0-\phi_{opt}) \cdot \cos(\theta_0-\phi)
-\end{align}
 $$
-which implies that $\hat{\phi}= \theta_0$ if $\cos(\theta_0-\phi_{opt})>0$ or $\hat{\phi}= \theta_0-\pi$ if $\cos(\theta_0-\phi_{opt})<0$. This implies that computed goal direction is always at least within $\frac{pi}{2}$ of the optimal direction $\phi_{opt}$ and that it is always a direction of descent. 
+
+which implies that $\hat{\phi}= \theta_0$ if $\cos(\theta_0-\phi_{opt})>0$ or $\hat{\phi}= \theta_0-\pi$ if $\cos(\theta_0-\phi_{opt})<0$. This implies that computed goal direction is always at least within $\frac{\pi}{2}$ of the optimal direction $\phi_{opt}$ and that it is always a direction of descent. 
 
 The process by which the $G$ computes the optimal direction is by sampling. Since the term is weighted by $\cos(\theta_0-\phi_{opt})$, travelling in random directions tends to yield the optimal travel direction. 
 
