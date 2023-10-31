@@ -11,13 +11,13 @@ $$
 \frac{1}{2}\left(v_L+v_R\right) \cos (\theta) \\
 \frac{1}{2}\left(v_L+v_R\right) \sin (\theta) \\
 \frac{1}{d}\left(v_R-v_L\right)
-\end{array}\right]
+\end{array}\right] \tag{1}
 $$
 
 $$
 \begin{align}
 v_L = w_I h(s_L) + w_C h(s_R) + v_0 + \gamma \\ 
-v_R = w_C h(s_L) + w_I h(s_R) + v_0 - \gamma 
+v_R = w_C h(s_L) + w_I h(s_R) + v_0 - \gamma \tag{2}
 \end{align}
 $$
 
@@ -44,7 +44,7 @@ We retain the equations of motions from (1), but modify the speeds of each vehic
 $$
 \begin{align}
 v_L &= v_0 + \gamma - \delta\theta \\ 
-v_R &= v_0 - \gamma + \delta\theta
+v_R &= v_0 - \gamma + \delta\theta \tag{3}
 \end{align}
 $$
 
@@ -58,8 +58,8 @@ Firstly, we assume that the gradient is linear, and varies in only one direction
 
 $$
 \begin{align}
-\frac{dG_\phi}{dt} &= -kG_\phi - d\cdot EPG_\phi \\
-&= -kG_\phi - \beta\cos(\theta-\phi_{opt}) \cdot \cos(\theta-\phi)
+\frac{dG_\phi}{dt} &= -kG_\phi - d\cdot EPG_\phi \\ \tag{4}
+&\approx -kG_\phi + \beta\cos(\theta-\phi_{opt}) \cdot \cos(\theta-\phi) \tag{5}
 \end{align}
 $$
 
@@ -88,3 +88,5 @@ $$
 In the absence of the $\gamma$ term which has mean zero, we get 
 $$\dot{\theta} = \frac{\alpha}{d}\left(\hat{\phi}-\theta\right)$$
 Implying that $\theta$ corrects to $\hat{\phi}$ with the corrective term
+
+# What those videos are
