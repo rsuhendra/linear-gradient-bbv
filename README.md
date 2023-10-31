@@ -11,13 +11,13 @@ $$
 \frac{1}{2}\left(v_L+v_R\right) \cos (\theta) \\
 \frac{1}{2}\left(v_L+v_R\right) \sin (\theta) \\
 \frac{1}{d}\left(v_R-v_L\right)
-\end{array}\right] \tag{1}
+\end{array}\right] \tag{*}
 $$
 
 $$
-\begin{align}
+\begin{align} \tag{*}
 v_L = w_I h(s_L) + w_C h(s_R) + v_0 + \gamma \\ 
-v_R = w_C h(s_L) + w_I h(s_R) + v_0 - \gamma \tag{2}
+v_R = w_C h(s_L) + w_I h(s_R) + v_0 - \gamma 
 \end{align}
 $$
 
@@ -42,9 +42,9 @@ $$\hat{\phi} = \arg\max_{\phi} G_\phi$$
 We retain the equations of motions from (1), but modify the speeds of each vehicle wheel to be
 
 $$
-\begin{align}
+\begin{align} \tag{*}
 v_L &= v_0 + \gamma - \delta\theta \\ 
-v_R &= v_0 - \gamma + \delta\theta \tag{3}
+v_R &= v_0 - \gamma + \delta\theta 
 \end{align}
 $$
 
@@ -57,9 +57,9 @@ Justification for removing the sensor terms is rooted in the observation that th
 Firstly, we assume that the gradient is linear, and varies in only one direction. In our situation, the optimal direction is $\phi_{opt}=0$ therefore the gradient vector is $\Delta f = <-a,0>$. Therefore, the directional derivative for movement in some direction $\theta$ is going to be $-a\cos(\theta-\phi_{opt})$. Generalizing to arbitrary $\phi_{opt}$ . Assuming a constant speed, we then have $\frac{dTemp}{dt}(\theta) = -av_0 \cos(\theta-\phi_{opt})$. Since we assume $d\approx b\frac{dTemp}{dt}$, we have 
 
 $$
-\begin{align}
-\frac{dG_\phi}{dt} &= -kG_\phi - d\cdot EPG_\phi \\ \tag{4}
-&\approx -kG_\phi + \beta\cos(\theta-\phi_{opt}) \cdot \cos(\theta-\phi) \tag{5}
+\begin{align} \tag{*}
+\frac{dG_\phi}{dt} &= -kG_\phi - d\cdot EPG_\phi \\ 
+&\approx -kG_\phi + \beta\cos(\theta-\phi_{opt}) \cdot \cos(\theta-\phi) 
 \end{align}
 $$
 
