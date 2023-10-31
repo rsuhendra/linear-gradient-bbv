@@ -87,6 +87,6 @@ $$
 
 In the absence of the $\gamma$ term which has mean zero, we get 
 $$\dot{\theta} = \frac{\alpha}{d}\left(\hat{\phi}-\theta\right)$$
-Implying that $\theta$ corrects to $\hat{\phi}$ with the corrective term
+Implying that $\theta$ corrects to $\hat{\phi}$ with the in the presence of $\delta\theta$
 
 # What those videos are
