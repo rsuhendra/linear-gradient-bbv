@@ -41,7 +41,7 @@ $${EPG}_\phi =  \cos(\theta-\phi)$$
 
 We also assume the direction of another set of $n$ ring cells, which encode the direction of a goal, a preferred heading. These integrate the product of the derivative-like signal $d$ and the EPG cells, and evolve according to 
 
-$$\frac{dG_\phi}{dt} = -kG_\phi - d\cdot {EPG}_\phi $$
+$$\frac{dG_\phi}{dt} = -kG_\phi - d\cdot {EPG}_\phi \tag{3} $$
 
 We then take the goal direction at time $t$ to be 
 $$\hat{\phi} = \arg\max_{\phi} G_\phi$$
@@ -50,7 +50,7 @@ $$\hat{\phi} = \arg\max_{\phi} G_\phi$$
 We retain the equations of motions from (1), but modify the speeds of each vehicle wheel to be
 
 $$
-\begin{align} \tag{3}
+\begin{align} \tag{4}
 v_L &= v_0 + \gamma - \delta\theta \\ 
 v_R &= v_0 - \gamma + \delta\theta 
 \end{align}
@@ -66,7 +66,7 @@ Firstly, we assume that the gradient is linear, and varies in only one direction
 
 $$
 \begin{align}
-\frac{dG_\phi}{dt} &= -kG_\phi - d\cdot EPG_\phi \tag{4} \\ 
+\frac{dG_\phi}{dt} &= -kG_\phi - d\cdot EPG_\phi \\ 
 &\approx -kG_\phi + \beta\cos(\theta-\phi_{opt}) \cdot \cos(\theta-\phi) \tag{5}
 \end{align}
 $$
