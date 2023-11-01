@@ -102,11 +102,11 @@ $$\dot{\theta} = \frac{\alpha}{d}\left(\hat{\phi}-\theta\right)$$
 Implying that $\theta$ corrects to $\hat{\phi}$ with the in the presence of the $\delta\theta$ term.
 
 # Video descriptions
-## Simul_withbounds directory
+## simul_withbounds directory
 In this directory, equation (3) is implemented. The four videos describe modifications to equation (4). "Correction" refers to the $\delta\theta$ term while noise refers to the $\gamma$ term. In all cases, the goal is computed as in equation (3), but it is not followed when correction is off. Videos start off with moving in a straight line at a certain angle (without noise or correction), then the angle switches suddenly and the respective mechanics are also turned on. 
 
 There's also a gif version of all the videos here in the gif folder. 
 
-## Simul_nobounds directory
+## simul_nobounds directory
 The first video in this directory is an unbounded version of equation (5), which is the theoretical approximation, and modified equation (4) with no noise. I varied the gain $\alpha$ of the correction for illustrative purposes.
 
