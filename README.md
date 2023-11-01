@@ -48,7 +48,7 @@ We also assume the direction of another set of $n$ ring cells, which encode the 
 $$\frac{dG_\phi}{dt} = -kG_\phi - d\cdot {EPG}_\phi \tag{3} $$
 
 We then take the goal direction at time $t$ to be 
-$$\hat{\phi} = \arg\max_{\phi} G_\phi$$
+$$\hat{\phi}(t) = \arg\max_{\phi} G_\phi(t)$$
 
 ## new movement
 We retain the equations of motions from (1), but modify the speeds of each vehicle wheel to be
@@ -101,4 +101,10 @@ In the absence of the $\gamma$ term which has mean zero, we get
 $$\dot{\theta} = \frac{\alpha}{d}\left(\hat{\phi}-\theta\right)$$
 Implying that $\theta$ corrects to $\hat{\phi}$ with the in the presence of the $\delta\theta$ term.
 
-# What those videos are
+# Video descriptions
+## Simul_withbounds directory
+In this directory, equation (3) is implemented. The four videos describe modifications to equation (4). "Correction" refers to the $\delta\theta$ term while noise refers to the $\gamma$ term. In all cases, the goal is implemented as in equation (3), but it is not followed when correction is off. 
+
+## Simul_nobounds directory
+The first video in this directory is an unbounded version of 
+
