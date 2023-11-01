@@ -1,6 +1,6 @@
 # Original formulation
 
-Original equations are
+The vehicle follows the dynamics
 
 $$
 \left[\begin{array}{c}
@@ -14,6 +14,8 @@ $$
 \end{array}\right] \tag{1}
 $$
 
+The left and right wheel speeds $v_L, v_R$ follow the equations:
+
 $$
 \begin{align} \tag{2}
 v_L = w_I h(s_L) + w_C h(s_R) + v_0 + \gamma \\ 
@@ -21,16 +23,18 @@ v_R = w_C h(s_L) + w_I h(s_R) + v_0 - \gamma
 \end{align}
 $$
 
-where $w_I, w_C$ are ipsilateral and contralateral weights, $v_0$ is a base speed, and $\gamma$ is Ornstein-Uhlenbeck colored noise, $h$ is sigmoid function that transforms each sensor input to $[0,1]$.
+where $s_L, s_R$ are temperatures at the left and right sensor, $w_I, w_C$ are ipsilateral and contralateral weights, $v_0$ is a base speed, and $\gamma$ is Ornstein-Uhlenbeck colored noise, $h$ is sigmoid function that transforms each sensor input to $[0,1]$.
 
 # Richard additions
 
 ## the derivative approximation
-Starting from this basic formulation, we designed a simple filter inspired by a firing-rate model, constructed by modifying a more detailed model of an adapting synapse. For the simplified model we assume an adaptation variable $p$ that evolves according to
+We designed a simple filter inspired by a firing-rate model, constructed by modifying a more detailed model of an adapting synapse. For the simplified model we assume an adaptation variable $p$ that evolves according to
 
 $$ \tau_p \frac{dp}{dt} = \frac{r_0}{r} - p $$
 
-where $r$ is the firing rate of the input, and the overall output signal is $d = d_0pr$. This adaptation model clearly needs modification at small input firing rates, but since here the input rate never becomes zero this detail can be safely ignored. This model possesses a number of properties that made it desirable for detecting changes in the input. In steady state (where we assume constant input $r$), $p = \frac{r_0}{r}$ and thus $d = pr = r_0 d_0$, which is independent of the input $r$. Since we will add an additional weight to this signal, we will take $r_0 = d_0 = 1$ without loss of generality. Another key property is the transient response of $d$ to a fast-changing input. If the input is a step-function from a smaller input $r_1$ to a larger input $r_2$, since the value of $p$ takes time $\tau_p$ to change appreciably, the immediate change in $g$ follows $\Delta g = p \Delta r = \frac{r_2-r_1}{r_1}$, i.e., the well-known Weber-Fechner law.
+where $r$ is the firing rate of the input, and the overall output signal is $d = d_0pr$. This adaptation model clearly needs modification at small input firing rates, but since here the input rate never becomes zero this detail can be safely ignored. This model possesses a number of properties that made it desirable for detecting changes in the input. In steady state (where we assume constant input $r$), $p = \frac{r_0}{r}$ and thus $d = pr = r_0 d_0$, which is independent of the input $r$. Since we will add an additional weight to this signal, we will take $r_0 = d_0 = 1$ without loss of generality. 
+
+Another key property is the transient response of $d$ to a fast-changing input. If the input is a step-function from a smaller input $r_1$ to a larger input $r_2$, since the value of $p$ takes time $\tau_p$ to change appreciably, the immediate change in $g$ follows $\Delta g = p \Delta r = \frac{r_2-r_1}{r_1}$, i.e., the well-known Weber-Fechner law.
 
 In this example, we take the $r = \frac{h(s_L)+h(s_R)}{2}$, and use $d\rightarrow d-1$ to achieve the desired parity.
 
@@ -62,7 +66,7 @@ Justification for removing the sensor terms is rooted in the observation that th
 
 # How does G compute the goal direction
 
-Firstly, we assume that the gradient is linear, and varies in only one direction. In our situation, the optimal direction is $\phi_{opt}=0$ therefore the gradient vector is $\Delta f = <-a,0>$. Therefore, the directional derivative for movement in some direction $\theta$ is going to be $-a\cos(\theta-\phi_{opt})$. Generalizing to arbitrary $\phi_{opt}$ . Assuming a constant speed, we then have $\frac{dTemp}{dt}(\theta) = -av_0 \cos(\theta-\phi_{opt})$. Since we assume $d\approx b\frac{dTemp}{dt}$, we have 
+Firstly, we assume that the gradient is linear, and varies in only one direction. In our situation, the optimal direction is $\phi_{opt}=0$ therefore the gradient vector is $\Delta f = <-a,0>$. Therefore, the directional derivative for movement in some direction $\theta$ is going to be $-a\cos(\theta-\phi_{opt})$. Generalizing to arbitrary $\phi_{opt}$ . Assuming a constant speed, we then have $\frac{dTemp}{dt}(\theta) = -av_0 \cos(\theta-\phi_{opt})$. Since we assume $d$ approximates the derivative like $d\approx b\frac{dTemp}{dt}$, we have 
 
 $$
 \begin{align}
@@ -95,6 +99,6 @@ $$
 
 In the absence of the $\gamma$ term which has mean zero, we get 
 $$\dot{\theta} = \frac{\alpha}{d}\left(\hat{\phi}-\theta\right)$$
-Implying that $\theta$ corrects to $\hat{\phi}$ with the in the presence of $\delta\theta$
+Implying that $\theta$ corrects to $\hat{\phi}$ with the in the presence of the $\delta\theta$ term.
 
 # What those videos are
