@@ -28,10 +28,11 @@ where $w_I, w_C$ are ipsilateral and contralateral weights, $v_0$ is a base spee
 ## the derivative approximation
 Starting from this basic formulation, we designed a simple filter inspired by a firing-rate model, constructed by modifying a more detailed model of an adapting synapse. For the simplified model we assume an adaptation variable $p$ that evolves according to
 
-$$ \tau_p \frac{dp}{dt} = \frac{r_0}{r} - p
-where $r$ is the firing rate of the input, and the overall output signal is $d = d_0pr$. This adaptation model clearly needs modification at small input firing rates, but since here the input rate never becomes zero this detail can be safely ignored. This model possesses a number of properties that made it desirable for detecting changes in the input. In steady state (where we assume constant input $r$), $p = r_0 =r $and thus $d = pr = r_0d_0$, which is independent of the input $r$. Since we will add an additional weight to this signal, we will take $r_0 = d_0 = 1$ without loss of generality. Another key property is the transient response of $d$ to a fast-changing input. If the input is a step-function from a smaller input $r_1$ to a larger input $r_2$, since the value of $p$ takes time $\tau_p$ to change appreciably, the immediate change in $g$ follows $\Delta g = p \Delta r = \frac{r_2-r_1}{r_1}$, i.e., the well-known Weber-Fechner law.
+$$ \tau_p \frac{dp}{dt} = \frac{r_0}{r} - p $$
 
-In this example, we take the $r = \frac{h(s_L)+h(s_R)}{2}$. 
+where $r$ is the firing rate of the input, and the overall output signal is $d = d_0pr$. This adaptation model clearly needs modification at small input firing rates, but since here the input rate never becomes zero this detail can be safely ignored. This model possesses a number of properties that made it desirable for detecting changes in the input. In steady state (where we assume constant input $r$), $p = \frac{r_0}{r}$ and thus $d = pr = r_0 d_0$, which is independent of the input $r$. Since we will add an additional weight to this signal, we will take $r_0 = d_0 = 1$ without loss of generality. Another key property is the transient response of $d$ to a fast-changing input. If the input is a step-function from a smaller input $r_1$ to a larger input $r_2$, since the value of $p$ takes time $\tau_p$ to change appreciably, the immediate change in $g$ follows $\Delta g = p \Delta r = \frac{r_2-r_1}{r_1}$, i.e., the well-known Weber-Fechner law.
+
+In this example, we take the $r = \frac{h(s_L)+h(s_R)}{2}$, and use $d\rightarrow d-1$ to achieve the desired parity.
 
 
 ## goal direction approximation
