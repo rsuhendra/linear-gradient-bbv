@@ -37,7 +37,7 @@ class BBV_twochoice_base(BBV_base):
 		l0 = [ang1-ang2,ang1-ang2-2*np.pi,ang1-ang2+2*np.pi]
 		l0 = l0[l1]
 
-		thetaNew = theta +2* np.sign(l0)*(np.pi/2.-np.abs(l0))
+		thetaNew = theta + 2* np.sign(l0)*(np.pi/2.-np.abs(l0))
 
 		return thetaNew
 	

@@ -1,11 +1,11 @@
 from BBV_twochoice import *
 from BBV_gradient import *
-from BBV_gradient2 import *
 import matplotlib.pyplot as plt
 import math 
+import deap
 from collections import Counter
 
-inputVals = np.array([0.725, -0.56, 0.5044506914904836, 0.3887560820695657, 0.6485170151559537, 4*0.3907077496945611, 0.75, 0.067])
+inputVals = np.array([0.725, -0.56, 0.5, 0.39, 0.65, 1.5, 0.75, 0.067])
 
 # test = BBV_gradient_Josh_simple(weights=inputVals)
 # ans = test.simulate()
@@ -16,16 +16,26 @@ inputVals = np.array([0.725, -0.56, 0.5044506914904836, 0.3887560820695657, 0.64
 # ax[1].plot(ans[:,0])
 # fig.savefig(figname+'.png')
 
-t0 = np.linspace(24.5, 38, num=6001)
-x2 = np.linspace(0, 600, num=6001)
+# t0 = np.linspace(24.5, 38, num=6001)
+# x2 = np.linspace(0, 600, num=6001)
 
 
-#np.linspace(0, 350, )
+test1 = BBV_gradient_Richard_taxis(weights=inputVals)
+test2 = BBV_gradient_Josh_simple(weights=inputVals)
+test3 = BBV_gradient_Richard_full(weights=inputVals, tau=4)
+
+# test = test1
+# test.sample_plot()
+# test.percent_reached_plot()
+
+tests = [test1, test2, test3]
+for test in tests:
+	test.v0 = 2
+	test.sample_plot()
+	# test.percent_reached_plot()
 
 
 
-test = BBV_gradient_Richard_test(weights=inputVals, tau=4)
-ans, opt, optcount, goals = test.simulate()
 
 # figname = 'Richard_d'
 # fig, ax = plt.subplots(2,2)

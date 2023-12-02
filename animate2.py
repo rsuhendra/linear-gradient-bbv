@@ -1,6 +1,5 @@
 from BBV_twochoice import *
 from BBV_gradient import *
-from BBV_gradient2 import *
 from BBV_gradient_test import *
 import matplotlib.pyplot as plt
 import math 

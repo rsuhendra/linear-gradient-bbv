@@ -1,6 +1,5 @@
 from BBV_twochoice import *
 from BBV_gradient import *
-from BBV_gradient2 import *
 from BBV_gradient_test import *
 import matplotlib.pyplot as plt
 import math 
@@ -8,13 +7,11 @@ from collections import Counter
 import matplotlib.animation as animation
 
 inputVals = np.array([0.725, -0.56, 0.5044506914904836, 0.3887560820695657, 0.6485170151559537, 4*0.3907077496945611, 0.75, 0.067])
-lineprojd = 5
+lineprojd = 0.5
 
-test = BBV_gradient_Richard_test2(weights=inputVals)
+test = BBV_gradient_Richard_taxis(weights=inputVals)
 
 ans = test.simulate()
-
-thetas_toplot = np.linspace(0, 2*np.pi, test.ncompass+1)
 
 fig = plt.figure()
 ax1 = plt.subplot(111)
@@ -51,27 +48,3 @@ ani = animation.FuncAnimation(fig=fig, func=update, frames=1800, interval=30)
 writervideo = animation.FFMpegWriter(fps=60) 
 #ani.save('test.mp4', writer=writervideo) 
 plt.show()
-
-
-
-
-
-
-# fig, ax = plt.subplots()
-
-# scat = ax.scatter(ans[0,0], ans[1,0])
-# ax.set(xlim=[0, 35], ylim=[0, 20])
-# ax.legend()
-
-# def update(frame):
-#     # for each frame, update the data stored on each artist.
-#     x = ans[:frame,0]
-#     y = ans[:frame,1]
-#     # update the scatter plot:
-#     data = np.stack([x, y]).T
-#     scat.set_offsets(data)
-
-#     return (scat)
-
-# ani = animation.FuncAnimation(fig=fig, func=update, frames=1800, interval=30)
-# plt.show()

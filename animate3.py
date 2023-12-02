@@ -1,6 +1,5 @@
 from BBV_twochoice import *
 from BBV_gradient import *
-from BBV_gradient2 import *
 import matplotlib.pyplot as plt
 import math 
 from collections import Counter
@@ -9,7 +8,7 @@ import matplotlib.animation as animation
 
 inputVals = np.array([0.725, -0.56, 0.5044506914904836, 0.3887560820695657, 0.6485170151559537, 4*0.3907077496945611, 0.75, 0.067])
 
-test = BBV_gradient_Richard_test3(weights=inputVals, tau=4)
+test = BBV_gradient_Richard_test2(weights=inputVals, tau=4)
 ans, opt, optcount, goals, ds, msgs = test.simulate()
 
 thetas_toplot = np.linspace(0, 2*np.pi, test.ncompass+1)
