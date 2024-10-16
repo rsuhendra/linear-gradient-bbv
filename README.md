@@ -14,7 +14,7 @@ $$
 \end{array}\right] \tag{1}
 $$
 
-The left and right wheel speeds $v_L, v_R$ follow the equations:
+The left and right wheel speeds $v_L, v_R$ follow the equations (FIX):
 
 $$
 \begin{align} \tag{2}
