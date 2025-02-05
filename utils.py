@@ -83,3 +83,4 @@ def ReLU(x):
 
 def ELU(x):
 	return np.where(x >= 0, x, np.exp(x) - 1)
+

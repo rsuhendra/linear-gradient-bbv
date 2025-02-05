@@ -220,7 +220,6 @@ class Evaluate_gradient():
 		# calculate the average speed for each angle bin
 		mag1 = np.array([np.average(all_speeds[inds==(i+1)]) for i in range(num_bins)])
 
-		
 		# angvel plot
 		num_bins = 6
 		hist, bins = np.histogram(all_angles, bins=num_bins, range=(0, 2 * np.pi))
@@ -240,3 +239,6 @@ class Evaluate_gradient():
 		eval4 = self.polar_turns(turn_data)
   
 		return eval1, eval2, eval3, eval4
+
+def evaluate():
+    pass
