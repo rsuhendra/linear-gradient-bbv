@@ -12,5 +12,5 @@ $$
 \frac{1}{2}(v_L+v_R) \cos (\theta) \\
 \frac{1}{2}(v_L+v_R) \sin (\theta) \\
 \frac{1}{d} (v_R-v_L)
-\end{bmatrix} \tag{1}
+\end{bmatrix}
 $$
