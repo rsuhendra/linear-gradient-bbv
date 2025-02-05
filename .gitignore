@@ -2,3 +2,4 @@
 *.mp4
 *.output
 *.out
+__pycache__
