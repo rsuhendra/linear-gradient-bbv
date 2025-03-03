@@ -3,3 +3,4 @@
 *.output
 *.out
 __pycache__
+deprecated
