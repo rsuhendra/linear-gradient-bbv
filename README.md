@@ -1,6 +1,9 @@
-# Original formulation
+# Linear Gradient Braitenberg Vehicle (BBV)
 
-The vehicle follows the dynamics
+
+## Original formulation
+
+According to (1), vehicle follows the dynamics
 
 $$
 \begin{bmatrix}
@@ -25,6 +28,9 @@ $$
 $$
 
 where $s_L, s_R$ are temperatures at the left and right sensor, $w_I, w_C$ are ipsilateral and contralateral weights, $v_0$ is a base speed, and $\gamma$ is Ornstein-Uhlenbeck colored noise. The function $h$ is a sigmoid transformation mapping each sensor input to $[0,1]$.
+
+### References
+1. Simões, J.M., Levy, J.I., Zaharieva, E.E. et al. Robustness and plasticity in Drosophila heat avoidance. Nat Commun 12, 2044 (2021). https://doi.org/10.1038/s41467-021-22322-w
 
 # Richard's Additions
 
