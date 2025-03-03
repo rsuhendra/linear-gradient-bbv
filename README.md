@@ -1,4 +1,9 @@
-# Original formulation
+# Linear Gradient Braitenberg Vehicle (BBV)
+
+
+## Original formulation
+
+Simões, J.M., Levy, J.I., Zaharieva, E.E. et al. Robustness and plasticity in Drosophila heat avoidance. Nat Commun 12, 2044 (2021). https://doi.org/10.1038/s41467-021-22322-w
 
 The vehicle follows the dynamics
 
